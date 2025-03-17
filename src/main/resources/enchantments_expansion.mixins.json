@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "cross.mods.enchantments.expansion.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EnchantmentDefinitionMixin"
+  ],
+  "minVersion": "0.8"
+}

@@ -1,8 +1,10 @@
 package cross.mods.enchantments.expansion;
 
+import net.neoforged.api.distmarker.Dist;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.common.ModConfigSpec;
@@ -23,6 +25,8 @@ public class EnchantmentsExpansion {
 
     public EnchantmentsExpansion(ModContainer mod) {
         mod.registerConfig(ModConfig.Type.COMMON, CONFIG_SPEC);
-        mod.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        if (FMLLoader.getDist() == Dist.CLIENT) {
+            mod.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        }
     }
 }

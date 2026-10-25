@@ -12,10 +12,6 @@ public class EnchantmentDefinitionMixin {
 
     @Shadow @Final private int maxLevel;
 
-    /**
-     * @author CrossVas
-     * @reason AAA
-     */
     @Overwrite
     public int maxLevel() {
         return this.maxLevel > 1 ? EnchantmentsExpansion.CONFIG.ENCH_MAX.get() : 1;
